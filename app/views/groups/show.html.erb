@@ -1,0 +1,26 @@
+
+
+<h1>Group Show</h1>
+
+<h2><%= @group.name %></h2>
+<%-# <h5><%= link_to @group.group.name, @group.group %>
+
+
+<h5>description:<%= @group.description %></h5>
+<h5>Image:<%= @group.image%></h5>
+
+<h5>Location:<%= @group.location %></h5>
+<h5>Nickname:<%= @group.nickname %></h5>
+
+<h4>Events:</h4>
+<ul>
+<% @group.events.each do |x| %>
+<li>
+<%= x.name %>
+</li>
+<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_group_path(@group) %>
+<%= link_to 'Delete', group_path(@group), method: :delete, data: {confirm: "Are you sure?"}%>

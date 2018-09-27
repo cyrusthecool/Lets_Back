@@ -1,0 +1,14 @@
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+
+<%= image_tag user.image , :alt => user.name, :class => 'thumb' %>
+
+<ul>
+  <li>Name: <%= link_to user.name, user %></li>
+  <li>Email: <%= user.email %></li>
+  <li>Bio: <%= user.bio %></li>
+  <li>Location: <%= user.location %></li>
+</ul>
+
+<% end %>

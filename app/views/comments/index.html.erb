@@ -1,0 +1,11 @@
+<h1>Comments</h1>
+
+<% @comments.each do |x| %>
+
+<h4>Name : <%= link_to x.content, comment_path(x.id) %></h4>
+<h5>User_id : <%= x.user_id %></h5>
+<h5>Event_id : <%= x.event_id %></h5>
+
+<%= link_to 'New', new_comment_path %>
+
+<% end %>

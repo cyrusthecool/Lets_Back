@@ -1,0 +1,23 @@
+<%= form_with model: @role do |form| %>
+
+  <% if role.errors.any? %>
+    <ul>
+      <% role.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.label :user_id%>
+  <%= form.number_field :user_id %>
+
+  <%= form.label :group_id%>
+  <%= form.number_field :group_id %>
+
+  <%= form.label :admin%>
+  <%= form.select(:admin, options_for_select([['True', true], ['False', false]], @role.admin))  %>
+
+  <%= form.label :moderator%>
+  <%= form.select(:moderator, options_for_select([['True', true], ['False', false]], @role.moderator))  %>
+  <%= form.submit %>
+<% end %>

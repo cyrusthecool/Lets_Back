@@ -1,0 +1,29 @@
+<%= form_with model: @enrollment do |form| %>
+
+  <% if enrollment.errors.any? %>
+    <ul>
+      <% enrollment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.label :status%>
+  <%= form.number_field :status %>
+
+  <%= form.label :waitinglist%>
+  <%= form.select(:waitinglist, options_for_select([['True', true], ['False', false]], @enrollment.waitinglist))  %>
+
+  <%= form.label :user_id%>
+  <%= form.number_field :user_id %>
+
+  <%= form.label :event_id%>
+  <%= form.number_field :event_id %>
+
+  <%= form.label :admin%>
+  <%= form.select(:admin, options_for_select([['True', true], ['False', false]], @enrollment.admin))  %>
+
+  <%= form.label :moderator%>
+  <%= form.select(:moderator, options_for_select([['True', true], ['False', false]], @enrollment.moderator))  %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1><%= @user.name %></h1>
+<%= image_tag @user.image, :alt => @user.name, :class => 'feature' %>
+
+<ul>
+  <li>Bio: <%= @user.bio %></li>
+  <li>Location: <%= @user.location %></li>
+  <li>Email: <%= @user.email %> </li>
+  <li>Admin: <%= @user.admin %></li>
+</ul>
+
+<div class="controls">
+<%= link_to "Edit user", edit_user_path(@user) %>
+<%= link_to "Delete user", users_path(@user), :method => 'delete', :data => {:confirm => 'Are you sure ?'} %>
+</div>

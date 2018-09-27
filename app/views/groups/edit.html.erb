@@ -1,0 +1,21 @@
+<h1>Group#edit</h1>
+<p>Find me in app/views/group/edit.html.erb</p>
+
+
+<%= form_for @group do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :image %>
+<%= f.text_field :image %>
+<%= f.label :Nickname %>
+<%= f.text_field :nickname %>
+
+
+
+
+<%= f.submit %>
+
+<% end %>

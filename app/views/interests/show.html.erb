@@ -1,0 +1,6 @@
+<h1> <%= @interest.name %></h1>
+
+<div class="controls">
+  <%= link_to 'Edit interest', edit_interest_path(@interest) %>
+  <%= link_to 'Delete interest', interest_path(@interest),:method => 'delete', :data => {:confirm => 'Are you sure ?'} %>
+</div>

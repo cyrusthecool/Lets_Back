@@ -1,0 +1,32 @@
+<h1>List of Roles</h1>
+
+
+<%= link_to 'New Entry', new_role_url %>
+
+  <table>
+    <thead>
+      <tr>
+        <td>Role_id</td>
+        <td>User_id</td>
+        <td>group_id</td>
+
+        <td>admin</td>
+        <td>moderator</td>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <% @roles.each do |e| %>
+      <tr>
+        <td><%= e.id %></td>
+        <td><%= e.user_id %></td>
+        <td><%= e.group_id %></td>
+
+        <td><%= e.admin %></td>
+        <td><%= e.moderator %></td>
+        <td><%= link_to 'Edit', edit_role_path(e) %></td>
+        <td><%= link_to 'Delete', e, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>

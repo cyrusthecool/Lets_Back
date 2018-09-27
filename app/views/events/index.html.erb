@@ -1,0 +1,11 @@
+
+<h1>Events</h1>
+<% @events.each do |x| %>
+
+<h4>Name : <%= link_to x.name, event_path(x.id) %></h4>
+<h4>Group : <%= x.group.name %></h4>
+<h5>Group_id : <%= x.group_id %></h5>
+<h5>Event_id : <%= x.id %></h5>
+<% end %>
+
+<%= link_to 'New', new_event_path %>

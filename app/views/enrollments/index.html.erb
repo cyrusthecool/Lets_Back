@@ -1,0 +1,34 @@
+<h1>Enrollments </h1>
+
+
+<%= link_to 'New Entry', new_enrollment_url %>
+
+  <table>
+    <thead>
+      <tr>
+        <td>Enrollment_id</td>
+        <td>User_id</td>
+        <td>Event_id</td>
+        <td>status</td>
+        <td>waiting</td>
+        <td>admin</td>
+        <td>moderator</td>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <% @enrollments.each do |e| %>
+      <tr>
+        <td><%= e.id %></td>
+        <td><%= e.user_id %></td>
+        <td><%= e.event_id %></td>
+        <td><%= e.status %></td>
+        <td><%= e.waitinglist %></td>
+        <td><%= e.admin %></td>
+        <td><%= e.moderator %></td>
+        <td><%= link_to 'Edit', edit_enrollment_path(e) %></td>
+        <td><%= link_to 'Delete', e, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>

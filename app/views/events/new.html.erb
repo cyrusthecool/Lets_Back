@@ -1,0 +1,29 @@
+<h1>Events#new</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+
+
+
+<%= form_for @event do |f| %>
+<%= f.select :group_id, @groups, :include_blank => true %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :image %>
+<%= f.text_field :image %>
+<%= f.label :location %>
+<%= f.text_field :location %>
+<%= f.label :capacity %>
+<%= f.text_field :capacity %>
+<%= f.label :photos %>
+<%= f.text_field :photos %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<%= f.label :time %>
+<%= f.time_field :time %>
+
+
+
+<%= f.submit %>
+
+<% end %>
